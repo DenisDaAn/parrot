@@ -101,8 +101,27 @@ export default function ChatPanel({ open, onClose }: Props) {
                     </div>
 
                     <div className="chat-input">
-                        <input />
-                        <button>→</button>
+                        <input
+                            type="text"
+                            placeholder="Введите сообщение..."
+                        />
+
+                        <button className="send-btn">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M22 2L11 13"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                />
+                                <path
+                                    d="M22 2L15 22L11 13L2 9L22 2Z"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </button>
                     </div>
 
                 </div>

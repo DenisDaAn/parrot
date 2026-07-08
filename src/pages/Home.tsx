@@ -12,6 +12,7 @@ export default function Home() {
     return (
         <div className="page">
 
+
             <NavigationBar />
             <InfoHomePage
                 chatOpen={chatOpen}

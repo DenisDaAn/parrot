@@ -157,52 +157,72 @@
 
 /* ================= INPUT ================= */
 
-.chat-input {
-    display: flex;
-    gap: 10px;
+.chat-input{
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-    padding: 12px;
+    padding:5px;
 
-    border-top: 1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05);
 
-    background: rgba(0,0,0,.08);
+    border:1px solid rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(14px);
 }
 
-.chat-input input {
-    flex: 1;
-    height: 40px;
+.chat-input input{
+    flex:1;
 
-    padding: 0 12px;
+    background:transparent;
+    border:none;
+    outline:none;
 
-    border-radius: 10px;
+    color:#fff;
 
-    border: 1px solid rgba(255,255,255,.12);
-
-    background: rgba(255,255,255,.06);
-
-    color: #E9FFF1;
-
-    outline: none;
+    font-size:15px;
 }
 
-.chat-input button {
-    width: 44px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
-
-    cursor: pointer;
-
-    background: linear-gradient(135deg, #34D399, #15803D);
-
-    color: white;
-
-    transition: .2s ease;
+.chat-input input::placeholder{
+    color:rgba(255,255,255,.45);
 }
 
-.chat-input button:hover {
-    transform: scale(1.05);
+.send-btn{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:#ffffff;
+    color:#111;
+
+    cursor:pointer;
+
+    transition:
+            transform .25s ease,
+            background .25s ease,
+            box-shadow .25s ease;
+}
+
+.send-btn svg{
+    width:18px;
+    height:18px;
+}
+
+.send-btn:hover{
+    transform:translateY(-2px) scale(1.05);
+    box-shadow:0 8px 20px rgba(255,255,255,.18);
+}
+
+.send-btn:active{
+    transform:scale(.95);
 }
 
 @media (max-width: 1024px) {

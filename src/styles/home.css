@@ -14,9 +14,17 @@ html, body {
 
 body {
     font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-    background: radial-gradient(circle at top, #2E6F40, #253D2C 60%);
     color: #CFFFDC;
     line-height: 1.4;
+    content:"";
+
+    position:absolute;
+    inset:0;
+    background-image:url("src/assets/background.png");
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-size:cover;
+    z-index:-2;
 }
 
 /* ================= VARIABLES ================= */
@@ -33,37 +41,61 @@ body {
 /* ================= NAV ================= */
 
 .nav {
+    min-height: 10vh;
     width: 100%;
-    height: 70px;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    justify-content: space-between;
+    padding: 10px 60px;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* ================= LOGO ================= */
+
 .logo {
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .logo img {
-    height: 32px;
-    transition: transform .25s ease, filter .25s ease;
-    filter: drop-shadow(0 0 6px rgba(0,255,140,0.15));
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+
+    transition: .25s ease;
+    filter: drop-shadow(0 0 8px rgba(0,255,140,.18));
 }
 
 .logo:hover img {
-    transform: scale(1.06);
-    filter: drop-shadow(0 0 10px rgba(0,255,140,0.35));
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 14px rgba(0,255,140,.35));
+}
+
+/* ================= TITLE ================= */
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    flex: 1;
+}
+
+.nav-bar a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #CFFFDC;
+    text-decoration: none;
 }
 
 /* ================= HERO ================= */
 
 .hero {
-    min-height: 90vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     padding: 0 60px;
@@ -89,6 +121,29 @@ body {
     font-size: var(--text-lg);
     color: var(--text-dim);
     line-height: 1.6;
+}
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    right:-200px;
+    top:-150px;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:#46FF96;
+
+    filter:blur(180px);
+
+    opacity:.12;
+
 }
 
 /* ================= ACTIONS ================= */
@@ -284,6 +339,20 @@ body {
     .glass-btn {
         min-width: 200px;
     }
+
+    .nav {
+        height: 80px;
+        padding: 0 24px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .nav-bar a {
+        font-size: 20px;
+    }
 }
 
 /* MOBILE */
@@ -319,8 +388,22 @@ body {
         height: 30px;
     }
 
+    .nav {
+        height: 72px;
+        padding: 0 16px;
+    }
+
     .logo img {
-        height: 28px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-bar {
+        margin-left: 14px;
+    }
+
+    .nav-bar a {
+        font-size: 18px;
     }
 }
 
@@ -333,6 +416,20 @@ body {
 
     .hero p {
         font-size: 14px;
+    }
+
+    .nav {
+        height: 64px;
+        padding: 0 12px;
+    }
+
+    .logo img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .nav-bar a {
+        font-size: 16px;
     }
 }
 
